@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags - ميداليات مفاتيح فريدة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1586105449897-20b5efeb3233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-secondary {
+            background-color: #95a5a6;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: var(--primary-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #1a252f;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Shopping Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cart-content {
+            background-color: white;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 8px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+        
+        .cart-item-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-price {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity {
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .cart-summary {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+        }
+        
+        /* Customer Information Form */
+        .customer-form {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .form-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -0.5rem;
+        }
+        
+        .form-group {
+            flex: 1 0 200px;
+            margin: 0 0.5rem 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        .optional {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .payment-methods h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .payment-warning {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            background-color: #ffeaea;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border-right: 4px solid #e74c3c;
+        }
+        
+        /* Order Summary in Payment Section */
+        .payment-order-summary {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e9ecef;
+        }
+        
+        .payment-order-summary h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.3rem 0;
+        }
+        
+        .summary-total {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 2px solid #eee;
+            color: var(--secondary-color);
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: var(--accent-color);
+            background-color: #f0f8ff;
+        }
+        
+        .payment-option.selected {
+            border-color: var(--secondary-color);
+            background-color: #fff0f0;
+        }
+        
+        .payment-option input {
+            margin-left: 1rem;
+        }
+        
+        .payment-details {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            display: none;
+        }
+        
+        .payment-details.active {
+            display: block;
+        }
+        
+        .payment-info {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+        
+        .payment-info h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .payment-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            direction: ltr;
+            text-align: center;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            user-select: none;
+            padding: 0.5rem;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .payment-number.revealed {
+            background-color: #f8f9fa;
+            border-color: var(--secondary-color);
+        }
+        
+        .payment-steps {
+            margin-top: 1rem;
+        }
+        
+        .payment-steps ol {
+            margin-right: 1.5rem;
+        }
+        
+        .payment-steps li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Payment Confirmation Note */
+        .payment-confirmation-note {
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+        }
+        
+        .payment-confirmation-note.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .payment-confirmation-note h4 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .payment-confirmation-note p {
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Order Confirmation Modal */
+        .order-confirmation {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .confirmation-content {
+            background-color: white;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 8px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .confirmation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-confirmation {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .order-details {
+            margin-bottom: 1.5rem;
+        }
+        
+        .order-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .order-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-summary {
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        
+        .confirmation-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .confirmation-buttons .btn {
+            flex: 1;
+        }
+        
+        /* Google Form Button */
+        .google-form-btn {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .google-form-btn:hover {
+            background-color: #3367D6;
+        }
+        
+        .google-form-btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #27ae60;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 2000;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .notification.error {
+            background-color: #e74c3c;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Security Features */
+        .secure-field {
+            position: relative;
+        }
+        
+        .secure-field .reveal-btn {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-image {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .cart-item-controls {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 1rem;
+            }
+            
+            .form-group {
+                flex: 1 0 100%;
+            }
+            
+            .confirmation-buttons {
+                flex-direction: column;
+            }
+            
+            .payment-option {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .payment-option input {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notification"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">T<span>ags</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#about">عن tags</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ميداليات مفاتيح فريدة من Tags</h1>
+            <p>اكتشف مجموعتنا الحصرية من ميداليات المفاتيح المصممة بعناية لتضيف لمسة من الأناقة لمفاتيحك</p>
+            <a href="#products" class="btn">تسوق الآن</a>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">منتجاتنا</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/cHMTVwjP/ghost.png" alt="ميدالية شبح">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ميدالية شبح</h3>
+                        <p class="product-price">150 ج.م</p>
+                        <button class="add-to-cart" data-id="1" data-name="ميدالية شبح" data-price="150" data-image="https://i.postimg.cc/cHMTVwjP/ghost.png">أضف إلى السلة</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/3R8y8Y2j/lotus.png" alt="ميدالية لوتس">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ميدالية لوتس</h3>
+                        <p class="product-price">150 ج.م</p>
+                        <button class="add-to-cart" data-id="2" data-name="ميدالية لوتس" data-price="150" data-image="https://i.postimg.cc/3R8y8Y2j/lotus.png">أضف إلى السلة</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/8Cw9Qh6b/cookies.png" alt="ميدالية كوكيز">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ميدالية كوكيز</h3>
+                        <p class="product-price">180 ج.م</p>
+                        <button class="add-to-cart" data-id="3" data-name="ميدالية كوكيز" data-price="180" data-image="https://i.postimg.cc/8Cw9Qh6b/cookies.png">أضف إلى السلة</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/x8pG2RRk/light.png" alt="ميدالية مضيئة">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ميدالية مضيئة</h3>
+                        <p class="product-price">200 ج.م</p>
+                        <button class="add-to-cart" data-id="4" data-name="ميدالية مضيئة" data-price="200" data-image="https://i.postimg.cc/x8pG2RRk/light.png">أضف إلى السلة</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/4yHd6gQm/medal6.png" alt="ميدالية بروست">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ميدالية بروست</h3>
+                        <p class="product-price">250 ج.م</p>
+                        <button class="add-to-cart" data-id="5" data-name="ميدالية بروست" data-price="250" data-image="https://i.postimg.cc/4yHd6gQm/medal6.png">أضف إلى السلة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">عن Tags</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Tags هو براند مصري متخصص في تصميم وإنتاج ميداليات المفاتيح الفريدة والأنيقة. نؤمن بأن التفاصيل الصغيرة هي التي تصنع الفارق في حياتنا اليومية.</p>
+                    <p>نحن نبتكر تصاميم مبتكرة تجمع بين الجمال والوظيفية، باستخدام مواد عالية الجودة تضمن متانة المنتج وجماله لفترة طويلة.</p>
+                    <p>رؤيتنا هي إضافة لمسة من الأناقة والفردية لمفاتيح عملائنا، وتحويل الأداة اليومية إلى قطعة إكسسوار تعبر عن شخصية صاحبها.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.postimg.cc/ht5hwfcV/Tags-Logo.png" alt="عن Tags">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>سلة التسوق</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ج.م</span>
+                </div>
+                
+                <div class="customer-form" id="customerForm">
+                    <div class="form-section">
+                        <h3>معلومات الاتصال</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول</label>
+                                <input type="text" id="firstName" required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">الاسم الأخير</label>
+                                <input type="text" id="lastName" required maxlength="50">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" required pattern="^(010|011|012|015)\d{8}$" placeholder="01012345678">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>تفاصيل العنوان</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">البلد</label>
+                                <select id="country" required>
+                                    <option value="">اختر البلد</option>
+                                    <option value="مصر">مصر</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="governorate">المحافظة</label>
+                                <input type="text" id="governorate" placeholder="أدخل اسم المحافظة" required maxlength="50">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="neighborhood">المركز/المدينة</label>
+                                <input type="text" id="neighborhood" placeholder="أدخل اسم المركز أو المدينة" required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">العنوان</label>
+                                <input type="text" id="address" required maxlength="100">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="building">رقم المبنى <span class="optional">(اختياري)</span></label>
+                                <input type="text" id="building" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="floor">الدور <span class="optional">(اختياري)</span></label>
+                                <input type="text" id="floor" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment">الشقة <span class="optional">(اختياري)</span></label>
+                                <input type="text" id="apartment" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="notes">ملاحظات <span class="optional">(اختياري)</span></label>
+                                <textarea id="notes" rows="3" maxlength="500"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="checkout-btn" id="checkoutBtn">إتمام الشراء</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-confirmation" id="orderConfirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <h2>تفاصيل الطلب</h2>
+                <button class="close-confirmation" id="closeConfirmation">&times;</button>
+            </div>
+            
+            <div class="order-details">
+                <div class="order-section">
+                    <h3>معلومات العميل</h3>
+                    <div id="customerDetails">
+                    </div>
+                </div>
+                
+                <div class="order-section">
+                    <h3>عنوان التوصيل</h3>
+                    <div id="addressDetails">
+                    </div>
+                </div>
+                
+                <div class="order-section">
+                    <h3>المنتجات المطلوبة</h3>
+                    <div class="order-items" id="orderItems">
+                    </div>
+                </div>
+                
+                <div class="order-section">
+                    <h3>ملخص الطلب</h3>
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>مجموع المنتجات:</span>
+                            <span id="orderSubtotal">0 ج.م</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>تكلفة الشحن:</span>
+                            <span id="shippingCost">100 ج.م</span>
+                        </div>
+                        <div class="summary-row summary-total">
+                            <span>المجموع الكلي:</span>
+                            <span id="orderTotal">0 ج.م</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-methods" id="paymentMethods">
+                    <h3>طريقة الدفع</h3>
+                    <div class="payment-warning">
+                        ⚠️ الدفع مسبق فقط - لا يوجد دفع عند الاستلام
+                    </div>
+                    
+                    <div class="payment-option" id="vodafoneOption">
+                        <input type="radio" id="vodafoneCash" name="paymentMethod" value="vodafone">
+                        <label for="vodafoneCash">
+                            <strong>فودافون كاش</strong>
+                            <p>الدفع عبر محفظة فودافون كاش</p>
+                        </label>
+                    </div>
+                    
+                    <div class="payment-option" id="instapayOption">
+                        <input type="radio" id="instapay" name="paymentMethod" value="instapay">
+                        <label for="instapay">
+                            <strong>انستاباي</strong>
+                            <p>الدفع عبر تطبيق انستاباي</p>
+                        </label>
+                    </div>
+                    
+                    <div class="payment-details" id="vodafoneDetails">
+                        <div class="payment-info">
+                            <h4>رقم فودافون كاش:</h4>
+                            <div class="payment-number" id="vodafoneNumber">انقر لإظهار الرقم</div>
+                            <p>يرجى تحويل المبلغ <strong id="vodafoneAmount">0 ج.م</strong> إلى هذا الرقم</p>
+                        </div>
+                        <div class="payment-steps">
+                            <h4>خطوات الدفع:</h4>
+                            <ol>
+                                <li>اذهب إلى تطبيق فودافون كاش</li>
+                                <li>اختر "إرسال أموال"</li>
+                                <li>أدخل الرقم: <strong id="vodafoneDisplay">انقر لإظهار الرقم</strong></li>
+                                <li>أدخل المبلغ الإجمالي: <strong id="vodafoneTotal">0 ج.م</strong></li>
+                                <li>أدخل الرقم السري</li>
+                                <li>احفظ صورة التحويل</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-details" id="instapayDetails">
+                        <div class="payment-info">
+                            <h4>رقم انستاباي:</h4>
+                            <div class="payment-number" id="instapayNumber">انقر لإظهار الرقم</div>
+                            <p>يرجى تحويل المبلغ <strong id="instapayAmount">0 ج.م</strong> إلى هذا الرقم</p>
+                        </div>
+                        <div class="payment-steps">
+                            <h4>خطوات الدفع:</h4>
+                            <ol>
+                                <li>افتح تطبيق انستاباي</li>
+                                <li>اختر "تحويل أموال"</li>
+                                <li>أدخل الرقم: <strong id="instapayDisplay">انقر لإظهار الرقم</strong></li>
+                                <li>أدخل المبلغ الإجمالي: <strong id="instapayTotal">0 ج.م</strong></li>
+                                <li>أدخل الرقم السري</li>
+                                <li>احفظ صورة التحويل</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-confirmation-note" id="paymentConfirmationNote">
+                        <h4><i class="fas fa-check-circle"></i> تم اختيار طريقة الدفع</h4>
+                        <p><strong>الخطوة التالية:</strong> بعد إتمام عملية الدفع، يرجى تأكيد الطلب.</p>
+                        <p>سيتم شحن طلبك بعد التحقق من عملية الدفع.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="google-form-btn" id="googleFormBtn" disabled>
+                <i class="fab fa-google"></i> تأكيد الطلب
+            </button>
+            
+            <div class="confirmation-buttons">
+                <button class="btn btn-secondary" id="editOrder">تعديل الطلب</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tags</h3>
+                    <p>متخصصون في ميداليات المفاتيح الفريدة والأنيقة منذ 2024</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#about">عن tags</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tags.keychain@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> مصر</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>تابعنا على</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/tags.keychain/"><i class="fab fa-instagram"></i> انستجرام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; Tags 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const PaymentSecurity = {
+            getPaymentNumber: function() {
+                const parts = [
+                    String.fromCharCode(48, 49, 48), // 010
+                    String.fromCharCode(54, 56, 49, 56), // 6818
+                    String.fromCharCode(50, 56, 50, 53) // 2825
+                ];
+                return parts.join('');
+            },
+            
+            revealNumber: function(element) {
+                const realNumber = this.getPaymentNumber();
+                element.textContent = realNumber;
+                element.classList.add('revealed');
+                
+                setTimeout(() => {
+                    this.hideNumber(element);
+                }, 30000);
+            },
+            
+            hideNumber: function(element) {
+                element.textContent = 'انقر لإظهار الرقم';
+                element.classList.remove('revealed');
+            },
+            
+            init: function() {
+                document.querySelectorAll('.payment-number').forEach(element => {
+                    element.addEventListener('click', () => {
+                        if (!element.classList.contains('revealed')) {
+                            this.revealNumber(element);
+                        }
+                    });
+                });
+            }
+        };
+
+        const ValidationSystem = {
+            validateEmail: function(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            },
+            
+            validateEgyptianPhone: function(phone) {
+                const phoneRegex = /^(010|011|012|015)\d{8}$/;
+                return phoneRegex.test(phone.replace(/\D/g, ''));
+            },
+            
+            sanitizeInput: function(input) {
+                if (typeof input !== 'string') return '';
+                
+                const div = document.createElement('div');
+                div.textContent = input;
+                let sanitized = div.innerHTML;
+                
+                sanitized = sanitized.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                
+                sanitized = sanitized.trim();
+                
+                return sanitized;
+            },
+            
+            validateForm: function() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const governorate = document.getElementById('governorate').value.trim();
+                const neighborhood = document.getElementById('neighborhood').value.trim();
+                const address = document.getElementById('address').value.trim();
+                
+                const requiredFields = [
+                    { field: firstName, name: 'الاسم الأول' },
+                    { field: lastName, name: 'الاسم الأخير' },
+                    { field: phone, name: 'رقم الهاتف' },
+                    { field: email, name: 'البريد الإلكتروني' },
+                    { field: governorate, name: 'المحافظة' },
+                    { field: neighborhood, name: 'المركز/المدينة' },
+                    { field: address, name: 'العنوان' }
+                ];
+                
+                for (let field of requiredFields) {
+                    if (!field.field) {
+                        throw new Error(`حقل ${field.name} مطلوب`);
+                    }
+                }
+                
+                if (!this.validateEmail(email)) {
+                    throw new Error('يرجى إدخال بريد إلكتروني صحيح');
+                }
+                
+                if (!this.validateEgyptianPhone(phone)) {
+                    throw new Error('يرجى إدخال رقم هاتف مصري صحيح (يبدأ بـ 010/011/012/015)');
+                }
+                
+                if (firstName.length > 50 || lastName.length > 50) {
+                    throw new Error('الاسم يجب أن يكون أقل من 50 حرفاً');
+                }
+                
+                return true;
+            }
+        };
+
+        const SecuritySystem = {
+            lastRequestTime: 0,
+            requestCount: 0,
+            maxRequests: 10, // 10 طلبات في الدقيقة
+            timeWindow: 60000, // 1 دقيقة
+            
+            throttleRequests: function() {
+                const now = Date.now();
+                
+                if (now - this.lastRequestTime > this.timeWindow) {
+                    this.requestCount = 0;
+                    this.lastRequestTime = now;
+                }
+                
+                this.requestCount++;
+                
+                if (this.requestCount > this.maxRequests) {
+                    throw new Error('تم تجاوز الحد الأقصى للطلبات. يرجى المحاولة لاحقاً.');
+                }
+                
+                return true;
+            },
+            
+            preventXSS: function() {
+                document.addEventListener('copy', function(e) {
+                    if (e.target.classList.contains('payment-number')) {
+                        e.preventDefault();
+                        showNotification('⛔ لا يمكن نسخ الرقم - يرجى كتابته يدوياً', false);
+                    }
+                });
+                
+                document.addEventListener('contextmenu', function(e) {
+                    if (e.target.classList.contains('payment-number')) {
+                        e.preventDefault();
+                        showNotification('⛔ هذا الإجراء غير مسموح به', false);
+                    }
+                });
+            },
+            
+            init: function() {
+                this.preventXSS();
+            }
+        };
+
+        const validProducts = {
+            '1': { price: 150, name: 'ميدالية شبح' },
+            '2': { price: 150, name: 'ميدالية لوتس' },
+            '3': { price: 180, name: 'ميدالية كوكيز' },
+            '4': { price: 200, name: 'ميدالية مضيئة' },
+            '5': { price: 250, name: 'ميدالية بروست' }
+        };
+
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const customerForm = document.getElementById('customerForm');
+        
+        const paymentMethods = document.getElementById('paymentMethods');
+        const vodafoneOption = document.getElementById('vodafoneOption');
+        const instapayOption = document.getElementById('instapayOption');
+        const vodafoneDetails = document.getElementById('vodafoneDetails');
+        const instapayDetails = document.getElementById('instapayDetails');
+        const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
+        const paymentConfirmationNote = document.getElementById('paymentConfirmationNote');
+        
+        const vodafoneAmount = document.getElementById('vodafoneAmount');
+        const vodafoneTotal = document.getElementById('vodafoneTotal');
+        const instapayAmount = document.getElementById('instapayAmount');
+        const instapayTotal = document.getElementById('instapayTotal');
+        
+        const orderConfirmation = document.getElementById('orderConfirmation');
+        const closeConfirmation = document.getElementById('closeConfirmation');
+        const customerDetails = document.getElementById('customerDetails');
+        const addressDetails = document.getElementById('addressDetails');
+        const orderItems = document.getElementById('orderItems');
+        const orderSubtotal = document.getElementById('orderSubtotal');
+        const orderTotal = document.getElementById('orderTotal');
+        const editOrderBtn = document.getElementById('editOrder');
+        const googleFormBtn = document.getElementById('googleFormBtn');
+        const notification = document.getElementById('notification');
+        
+        let cart = [];
+        let orderMessage = '';
+        let selectedPaymentMethod = '';
+        const shippingCost = 100;
+        
+        PaymentSecurity.init();
+        SecuritySystem.init();
+
+        function showNotification(message, isSuccess = true) {
+            notification.textContent = message;
+            notification.className = 'notification' + (isSuccess ? '' : ' error');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 4000);
+        }
+
+        function validateCart() {
+            return cart.every(item => {
+                const validProduct = validProducts[item.id];
+                return validProduct && 
+                       item.price === validProduct.price &&
+                       item.name === validProduct.name &&
+                       typeof item.quantity === 'number' &&
+                       item.quantity > 0 && item.quantity <= 10;
+            });
+        }
+
+        paymentRadios.forEach(method => {
+            method.addEventListener('change', function() {
+                vodafoneOption.classList.remove('selected');
+                instapayOption.classList.remove('selected');
+                
+                vodafoneDetails.classList.remove('active');
+                instapayDetails.classList.remove('active');
+                
+                if (this.value === 'vodafone') {
+                    vodafoneOption.classList.add('selected');
+                    vodafoneDetails.classList.add('active');
+                    selectedPaymentMethod = 'فودافون كاش';
+                } else if (this.value === 'instapay') {
+                    instapayOption.classList.add('selected');
+                    instapayDetails.classList.add('active');
+                    selectedPaymentMethod = 'انستاباي';
+                }
+                
+                paymentConfirmationNote.classList.add('active');
+                googleFormBtn.disabled = false;
+                
+                updatePaymentDetails();
+            });
+        });
+        
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        closeConfirmation.addEventListener('click', () => {
+            orderConfirmation.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        orderConfirmation.addEventListener('click', (e) => {
+            if (e.target === orderConfirmation) {
+                orderConfirmation.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        editOrderBtn.addEventListener('click', () => {
+            orderConfirmation.style.display = 'none';
+            cartModal.style.display = 'flex';
+        });
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                try {
+                    SecuritySystem.throttleRequests();
+                    
+                    const id = button.getAttribute('data-id');
+                    const name = button.getAttribute('data-name');
+                    const price = parseInt(button.getAttribute('data-price'));
+                    const image = button.getAttribute('data-image');
+                    
+                    const existingItem = cart.find(item => item.id === id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            image,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    
+                    button.textContent = 'تم الإضافة!';
+                    button.style.backgroundColor = '#27ae60';
+                    
+                    setTimeout(() => {
+                        button.textContent = 'أضف إلى السلة';
+                        button.style.backgroundColor = '';
+                    }, 1500);
+                    
+                } catch (error) {
+                    showNotification(error.message, false);
+                }
+            });
+        });
+        
+        function updateCart() {
+            if (!validateCart()) {
+                cart = [];
+                showNotification('⚠️ تم اكتشاف تلاعب في البيانات، تم إعادة تعيين السلة', false);
+            }
+            
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart">سلة التسوق فارغة</div>';
+                cartTotal.textContent = '0 ج.م';
+                customerForm.style.display = 'none';
+                checkoutBtn.style.display = 'none';
+                return;
+            }
+            
+            customerForm.style.display = 'block';
+            checkoutBtn.style.display = 'block';
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price} ج.م</div>
+                    </div>
+                    <div class="cart-item-controls">
+                        <div class="quantity-control">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="remove-item" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            cartTotal.textContent = `${total} ج.م`;
+            
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    item.quantity += 1;
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== id);
+                    updateCart();
+                });
+            });
+        }
+        
+        function updatePaymentSummary() {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const total = subtotal + shippingCost;
+            
+            vodafoneAmount.textContent = `${total} ج.م`;
+            vodafoneTotal.textContent = `${total} ج.م`;
+            instapayAmount.textContent = `${total} ج.م`;
+            instapayTotal.textContent = `${total} ج.م`;
+        }
+        
+        function updatePaymentDetails() {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const total = subtotal + shippingCost;
+        }
+        
+        function generateOrderMessage() {
+            const firstName = ValidationSystem.sanitizeInput(document.getElementById('firstName').value.trim());
+            const lastName = ValidationSystem.sanitizeInput(document.getElementById('lastName').value.trim());
+            const phone = ValidationSystem.sanitizeInput(document.getElementById('phone').value.trim());
+            const email = ValidationSystem.sanitizeInput(document.getElementById('email').value.trim());
+            const country = "مصر";
+            const governorate = ValidationSystem.sanitizeInput(document.getElementById('governorate').value.trim());
+            const neighborhood = ValidationSystem.sanitizeInput(document.getElementById('neighborhood').value.trim());
+            const address = ValidationSystem.sanitizeInput(document.getElementById('address').value.trim());
+            const building = ValidationSystem.sanitizeInput(document.getElementById('building').value.trim());
+            const floor = ValidationSystem.sanitizeInput(document.getElementById('floor').value.trim());
+            const apartment = ValidationSystem.sanitizeInput(document.getElementById('apartment').value.trim());
+            const notes = ValidationSystem.sanitizeInput(document.getElementById('notes').value.trim());
+            
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const total = subtotal + shippingCost;
+            
+            let message = `🛒 طلب جديد من موقع Tags\n\n`;
+            message += `👤 معلومات العميل:\n`;
+            message += `الاسم: ${firstName} ${lastName}\n`;
+            message += `الهاتف: ${phone}\n`;
+            message += `البريد الإلكتروني: ${email}\n\n`;
+            
+            message += `💳 طريقة الدفع:\n`;
+            message += `الدفع المسبق عبر: ${selectedPaymentMethod}\n`;
+            message += `رقم التحويل: ${PaymentSecurity.getPaymentNumber()}\n\n`;
+            
+            message += `📍 عنوان التوصيل:\n`;
+            message += `البلد: ${country}\n`;
+            message += `المحافظة: ${governorate}\n`;
+            message += `المركز/المدينة: ${neighborhood}\n`;
+            message += `العنوان: ${address}\n`;
+            
+            if (building) message += `رقم المبنى: ${building}\n`;
+            if (floor) message += `الدور: ${floor}\n`;
+            if (apartment) message += `الشقة: ${apartment}\n`;
+            
+            message += `\n📦 المنتجات المطلوبة:\n`;
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.quantity}) - ${item.price * item.quantity} ج.م\n`;
+            });
+            
+            message += `\n💰 ملخص الطلب:\n`;
+            message += `مجموع المنتجات: ${subtotal} ج.م\n`;
+            message += `تكلفة الشحن: ${shippingCost} ج.م\n`;
+            message += `الإجمالي: ${total} ج.م\n`;
+            
+            message += `\n💬 ملاحظات:\n`;
+            message += `يرجى إرسال صورة إثبات التحويل عبر ${selectedPaymentMethod}\n`;
+            if (notes) message += `ملاحظات إضافية: ${notes}`;
+            
+            return message;
+        }
+        
+        function generateGoogleFormUrl() {
+            try {
+                ValidationSystem.validateForm();
+                
+                if (!validateCart()) {
+                    throw new Error('بيانات السلة غير صالحة');
+                }
+
+                const firstName = ValidationSystem.sanitizeInput(document.getElementById('firstName').value.trim());
+                const lastName = ValidationSystem.sanitizeInput(document.getElementById('lastName').value.trim());
+                const phone = ValidationSystem.sanitizeInput(document.getElementById('phone').value.trim());
+                const email = ValidationSystem.sanitizeInput(document.getElementById('email').value.trim());
+                const country = "مصر";
+                const governorate = ValidationSystem.sanitizeInput(document.getElementById('governorate').value.trim());
+                const neighborhood = ValidationSystem.sanitizeInput(document.getElementById('neighborhood').value.trim());
+                const address = ValidationSystem.sanitizeInput(document.getElementById('address').value.trim());
+                const building = ValidationSystem.sanitizeInput(document.getElementById('building').value.trim());
+                const floor = ValidationSystem.sanitizeInput(document.getElementById('floor').value.trim());
+                const apartment = ValidationSystem.sanitizeInput(document.getElementById('apartment').value.trim());
+                const notes = ValidationSystem.sanitizeInput(document.getElementById('notes').value.trim());
+
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const total = subtotal + shippingCost;
+
+                let productsList = '';
+                cart.forEach(item => {
+                    productsList += `• ${item.name} - الكمية: ${item.quantity} - السعر: ${item.price * item.quantity} ج.م\n`;
+                });
+
+                let formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfK27zAns5HloZQVI-ZNRwbAy_5OhONu268jtWpQJBHfu6kzw/viewform?usp=pp_url";
+        
+                formUrl += "&entry.2138152184=" + encodeURIComponent(firstName + " " + lastName);
+                formUrl += "&entry.210468108=" + encodeURIComponent(phone);
+                formUrl += "&entry.1458679456=" + encodeURIComponent(email);
+
+                let fullAddress = `${address}, ${neighborhood}, ${governorate}, ${country}`;
+                if (building) fullAddress += ` - مبنى: ${building}`;
+                if (floor) fullAddress += ` - دور: ${floor}`;
+                if (apartment) fullAddress += ` - شقة: ${apartment}`;
+
+                formUrl += "&entry.307545196=" + encodeURIComponent(fullAddress);
+                formUrl += "&entry.919921973=" + encodeURIComponent(productsList);
+                formUrl += "&entry.1610715703=" + encodeURIComponent(total + " ج.م");
+                formUrl += "&entry.1942789757=" + encodeURIComponent(selectedPaymentMethod);
+                formUrl += "&entry.466968609=" + encodeURIComponent(notes || "لا توجد ملاحظات");
+
+                return formUrl;
+                
+            } catch (error) {
+                console.error('Error generating form URL:', error);
+                throw error;
+            }
+        }
+        
+        checkoutBtn.addEventListener('click', () => {
+            try {
+                ValidationSystem.validateForm();
+                
+                if (!validateCart()) {
+                    throw new Error('بيانات السلة غير صالحة');
+                }
+
+                const firstName = ValidationSystem.sanitizeInput(document.getElementById('firstName').value.trim());
+                const lastName = ValidationSystem.sanitizeInput(document.getElementById('lastName').value.trim());
+                const phone = ValidationSystem.sanitizeInput(document.getElementById('phone').value.trim());
+                const email = ValidationSystem.sanitizeInput(document.getElementById('email').value.trim());
+                const country = document.getElementById('country').value;
+                const governorate = ValidationSystem.sanitizeInput(document.getElementById('governorate').value.trim());
+                const neighborhood = ValidationSystem.sanitizeInput(document.getElementById('neighborhood').value.trim());
+                const address = ValidationSystem.sanitizeInput(document.getElementById('address').value.trim());
+                
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const total = subtotal + shippingCost;
+                
+                customerDetails.innerHTML = `
+                    <p><strong>الاسم:</strong> ${firstName} ${lastName}</p>
+                    <p><strong>الهاتف:</strong> ${phone}</p>
+                    <p><strong>البريد الإلكتروني:</strong> ${email}</p>
+                `;
+                
+                let addressHTML = `
+                    <p><strong>البلد:</strong> ${country}</p>
+                    <p><strong>المحافظة:</strong> ${governorate}</p>
+                    <p><strong>المركز/المدينة:</strong> ${neighborhood}</p>
+                    <p><strong>العنوان:</strong> ${address}</p>
+                `;
+                
+                const building = document.getElementById('building').value;
+                const floor = document.getElementById('floor').value;
+                const apartment = document.getElementById('apartment').value;
+                const notes = document.getElementById('notes').value;
+                
+                if (building) addressHTML += `<p><strong>رقم المبنى:</strong> ${building}</p>`;
+                if (floor) addressHTML += `<p><strong>الدور:</strong> ${floor}</p>`;
+                if (apartment) addressHTML += `<p><strong>الشقة:</strong> ${apartment}</p>`;
+                if (notes) addressHTML += `<p><strong>ملاحظات:</strong> ${notes}</p>`;
+                
+                addressDetails.innerHTML = addressHTML;
+                
+                orderItems.innerHTML = '';
+                cart.forEach(item => {
+                    const orderItemElement = document.createElement('div');
+                    orderItemElement.className = 'order-item';
+                    orderItemElement.innerHTML = `
+                        <span>${item.name} (${item.quantity})</span>
+                        <span>${item.price * item.quantity} ج.م</span>
+                    `;
+                    orderItems.appendChild(orderItemElement);
+                });
+                
+                orderSubtotal.textContent = `${subtotal} ج.م`;
+                document.getElementById('shippingCost').textContent = `${shippingCost} ج.م`;
+                orderTotal.textContent = `${total} ج.م`;
+                
+                updatePaymentSummary();
+                
+                paymentRadios.forEach(radio => radio.checked = false);
+                vodafoneOption.classList.remove('selected');
+                instapayOption.classList.remove('selected');
+                vodafoneDetails.classList.remove('active');
+                instapayDetails.classList.remove('active');
+                paymentConfirmationNote.classList.remove('active');
+                googleFormBtn.disabled = true;
+                selectedPaymentMethod = '';
+                
+                cartModal.style.display = 'none';
+                orderConfirmation.style.display = 'flex';
+                
+            } catch (error) {
+                showNotification(`❌ ${error.message}`, false);
+            }
+        });
+        
+        googleFormBtn.addEventListener('click', async () => {
+            googleFormBtn.disabled = true;
+            googleFormBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحميل...';
+
+            try {
+                if (!selectedPaymentMethod) {
+                    throw new Error('يرجى اختيار طريقة الدفع أولاً');
+                }
+
+                ValidationSystem.validateForm();
+   
+                SecuritySystem.throttleRequests();
+                
+                const googleFormUrl = generateGoogleFormUrl();                
+                
+                const newWindow = window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
+                
+                if (!newWindow) {
+                    throw new Error('تم منع النافذة المنبثقة. يرجى السماح بالنوافذ المنبثقة لهذا الموقع');
+                }
+
+                showNotification('✓ تم فتح نموذج جوجل - يرجى إكمال الطلب');
+                
+                setTimeout(() => {
+                    cart = [];
+                    updateCart();
+                    orderConfirmation.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 3000);
+
+            } catch (error) {
+                showNotification(`❌ ${error.message}`, false);
+            } finally {
+                googleFormBtn.disabled = false;
+                googleFormBtn.innerHTML = '<i class="fab fa-google"></i> تأكيد الطلب';
+            }
+        });
+                
+        updateCart();
+
+        console.log('%c⛔ إيقاف!', 'color: red; font-size: 40px; font-weight: bold;');
+        console.log('%cهذه الميزة للمطورين فقط. إذا طلب منك أحد إدخال أي شيء هنا، فهو محتال.', 'color: white; font-size: 16px;');
+    </script>
+</body>
+</html>
